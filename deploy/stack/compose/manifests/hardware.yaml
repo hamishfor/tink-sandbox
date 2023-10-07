@@ -1,16 +1,17 @@
 apiVersion: "tinkerbell.org/v1alpha1"
 kind: Hardware
 metadata:
-  name: machine1
+  name: elite8200
+  namespace: sff
 spec:
   disks:
-    - device: $DISK_DEVICE
+    - device: /dev/sda
   metadata:
     facility:
-      facility_code: sandbox
+      facility_code: onprem
     instance:
-      hostname: "machine1"
-      id: "$TINKERBELL_CLIENT_MAC"
+      hostname: "elite8200-1"
+      id: "e8:39:35:5c:e4:81"
       operating_system:
         distro: "ubuntu"
         os_slug: "ubuntu_20_04"
@@ -18,16 +19,16 @@ spec:
   interfaces:
     - dhcp:
         arch: x86_64
-        hostname: machine1
+        hostname: elite8200-1
         ip:
-          address: $TINKERBELL_CLIENT_IP
-          gateway: $TINKERBELL_CLIENT_GW
+          address: 192.168.1.200
+          gateway: 192.168.1.1
           netmask: 255.255.255.0
         lease_time: 86400
-        mac: $TINKERBELL_CLIENT_MAC
+        mac: e8:39:35:5c:e4:81
         name_servers:
-          - $TINKERBELL_CLIENT_NAMESERVER_1
-          - $TINKERBELL_CLIENT_NAMESERVER_2
+          - 192.168.1.12
+          - 192.168.1.1
         uefi: false
       netboot:
         allowPXE: true
