@@ -2,7 +2,6 @@ apiVersion: "tinkerbell.org/v1alpha1"
 kind: Hardware
 metadata:
   name: elite8200
-  namespace: sff
 spec:
   disks:
     - device: /dev/sda
