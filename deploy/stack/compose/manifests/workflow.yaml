@@ -4,6 +4,6 @@ metadata:
   name: sandbox-workflow
 spec:
   templateRef: ubuntu-focal
-  hardwareRef: elite8200-1
+  hardwareRef: elite8200
   hardwareMap:
     device_1: e8:39:35:5c:e4:81
