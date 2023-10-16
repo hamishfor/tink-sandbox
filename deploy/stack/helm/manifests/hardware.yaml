@@ -31,7 +31,7 @@ spec:
         mac: e8:39:35:5c:e4:81
         name_servers:
           - 192.168.1.12
-          - 192.168.1.1
+          - 8.8.8.8
         uefi: false
       netboot:
         allowPXE: true
