@@ -2,9 +2,8 @@ apiVersion: "tinkerbell.org/v1alpha1"
 kind: Workflow
 metadata:
   name: sandbox-workflow
-  namespace: tink-system
 spec:
-  templateRef: ubuntu-jammy
-  hardwareRef: elite8200
+  templateRef: ubuntu-focal
+  hardwareRef: machine1
   hardwareMap:
-    device_1: e8:39:35:5c:e4:81
+    device_1: $TINKERBELL_CLIENT_MAC

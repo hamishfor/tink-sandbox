@@ -135,7 +135,10 @@ services:
   rufio:
     image: $RUFIO_IMAGE
     command:
-      ["--kubeconfig=/output/kubeconfig.yaml", "--kubernetes=https://k3s:6443"]
+      [
+        "--kubeconfig=/output/kubeconfig.yaml",
+        "--kubernetes=https://k3s:6443"
+      ]
     volumes:
       - ./state/kube:/output
     depends_on:
@@ -192,9 +195,7 @@ services:
 
   manifest-update:
     image: bash:4.4
-    command: -c "
-      apk add gettext;
-      for i in /manifests/{hardware.yaml,template.yaml,workflow.yaml}; do envsubst < $$i; echo -e '---'; done > /manifests/manifests.yaml;"
+    command: -c " apk add gettext; for i in /manifests/{hardware.yaml,template.yaml,workflow.yaml}; do envsubst < $$i; echo -e '---'; done > /manifests/manifests.yaml;"
     env_file:
       - ./.env
     volumes:
