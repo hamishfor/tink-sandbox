@@ -36,3 +36,36 @@ spec:
       netboot:
         allowPXE: true
         allowWorkflow: true
+spec:
+  disks:
+    - device: /dev/sda
+  metadata:
+    facility:
+      facility_code: onprem
+    manufacturer:
+      slug: hp
+    instance:
+      userdata: ""
+      hostname: "elite8200-2"
+      id: "e8:39:35:5c:e4:82"
+      operating_system:
+        distro: "ubuntu"
+        os_slug: "ubuntu_22_04"
+        version: "22.04"
+  interfaces:
+    - dhcp:
+        arch: x86_64
+        hostname: elite8200-2
+        ip:
+          address: 192.168.1.72
+          gateway: 192.168.1.1
+          netmask: 255.255.255.0
+        lease_time: 86400
+        mac: e8:39:35:5c:e4:81
+        name_servers:
+          - 192.168.1.12
+          - 8.8.8.8
+        uefi: false
+      netboot:
+        allowPXE: true
+        allowWorkflow: true
